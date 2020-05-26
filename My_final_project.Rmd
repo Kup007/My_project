@@ -73,7 +73,7 @@ No prizes for guessing mine:
 
 # My time went ...
 
-I spent a bit of time to figure out the graph design I need and one which will be more informative for the readers without going through the table.
+I spent a bit of time to figure out the graph design the one that will be more informative for the readers without going through the table.
 
 # Next steps
 
