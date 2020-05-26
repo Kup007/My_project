@@ -1,0 +1,84 @@
+---
+title: Genetic analysis of stem rust disease resistance in wheat
+subtitle: 
+short_title: Optional short title # Delete if not required
+
+author:  Sam Periyannan
+affiliation: CSIRO Agriculture & Food  # Or group/team
+photo: resources/img/SP.jpg
+
+output: DSreport::project_summary
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  results = 'asis',
+  echo = FALSE,
+  warning = FALSE,
+  message = FALSE,
+  fig.align = 'center'
+)
+
+#Load libraries
+library(tidyverse)
+library(gapminder)
+library(kableExtra)
+```
+
+
+# Introduction
+With the background in genetics, plant breeding and crop pathology, I am currently working as a Scientist at the Crop Immunity group of Traits program of CSIRO Agriculture and Food business unit. As the pathogen causing rust disease of wheat evolves frequently overcoming resistance genes deployed in commercial cultivars, my role at CSIRO is to screen germplasm and wild relatives of cultivated wheat for novel resistance. Through genetic characterisation we identify markers linked to the new resistance thereby enabling rapid breeding of the identified resistance into elite wheat cultivars through marker assisted gene selection. 
+
+# My Project
+**Stem rust resistance gene combinations**. The project is about the resistance effect of different stem rust resistance genes and their combinations at three different geographical environment (Australia, India and Kenya). 
+
+## Preliminary results
+
+**Tables**
+```{r mytable, out.width='100%', echo = T}
+Sr_combinations <- read.csv("~/data_school/My_final_project/Untitled/data/Sr_combinations.csv")
+knitr::kable(head(Sr_combinations, n = 37), format = "html", caption = "Stem rust resistance gene combinations and resistance ") %>% 
+  kable_styling("striped")
+```
+
+
+**Images from a file**
+
+![](resources/img/rust.jpg){width=100px}
+
+**Plots from R**
+```{r standard-plot, out.width='60%', fig.align='Left', fig.height= 4, fig.width=6, fig.cap="Stem rust resistance gene combinations and resistance"}
+Sr_combinations <- read.csv("~/data_school/My_final_project/Untitled/data/Sr_combinations.csv")
+Resistance <-ggplot(data = Sr_combinations,
+                    mapping = aes(x = Gene, y = Resistance, colour = Country)) +
+  geom_point() +
+geom_smooth(method = "lm", size = 0.2, se = FALSE)
+Resistance +
+  labs(x="Sr gene(s)",
+       y="Resistance")+
+  geom_point()
+
+```
+
+# My Digital Toolbox
+
+tidyverse and ggplot are tools that assisted me in preparing the end results. They are new to me before starting the data school. 
+
+## Favourite tool (optional)
+
+ggplot is my favourite tool. 
+
+![](https://raw.githubusercontent.com/tidyverse/ggplot2/master/man/figures/logo.png){.pull-right width=100px}
+
+No prizes for guessing mine:
+
+# My time went ...
+
+I spent a bit of time to figure out the graph design I need and one which will be more informative for the readers without going through the table.
+
+# Next steps
+
+I have started the trial with a small experimental data. I would like to challenge myself with more complicated data in near future.
+
+# My Data School Experience
+
+The most enjoyable part is the team work and the helpers being around. Further the recorded lectures are so helpful to view multiple times later when we need them. Overall I enjoyed attending the data school very well and will definitely recommend my team members to have a go if they have time ande get the chance to enrol.
